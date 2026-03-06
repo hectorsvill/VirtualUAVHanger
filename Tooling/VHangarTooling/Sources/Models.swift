@@ -201,5 +201,25 @@ public enum AIActionValue: Codable, Sendable {
         if let s = try? container.decode(String.self) { self = .string(s); return }
         self = .null
     }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch self {
+        case .string(let s): try container.encode(s)
+        case .int(let i): try container.encode(i)
+        case .bool(let b): try container.encode(b)
+        case .null: try container.encodeNil()
+        }
+    }
+
+    public var stringValue: String? {
+        if case .string(let s) = self { return s }
+        return nil
+    }
+
+    public var intValue: Int? {
+        if case .int(let i) = self { return i }
+        return nil
+    }
 }
 
