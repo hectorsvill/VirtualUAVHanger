@@ -1,0 +1,638 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.xctest/Contents/MacOS/VHangarToolingPackageTests",
+      "packagePath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling",
+      "productName" : "VHangarToolingPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.VHangarTooling-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarTooling.build/sources",
+      "importPath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/Sources/Models.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarTooling.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "VHangarTooling",
+      "moduleOutputPath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/Modules/VHangarTooling.swiftmodule",
+      "objects" : [
+        "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarTooling.build/Models.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarTooling.build/include/VHangarTooling-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "vhangartooling"
+      ],
+      "outputFileMapPath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarTooling.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarTooling.build/Models.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/Modules/VHangarTooling.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/Sources/Models.swift"
+      ],
+      "tempsPath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarTooling.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.VHangarToolingPackageTests-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.build/sources",
+      "importPath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/Modules/VHangarToolingTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "VHangarToolingPackageTests",
+      "moduleOutputPath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/Modules/VHangarToolingPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.build/include/VHangarToolingPackageTests-Swift.h",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "vhangartooling"
+      ],
+      "outputFileMapPath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/Modules/VHangarToolingPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.VHangarToolingTests-arm64-apple-macosx26.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingTests.build/sources",
+      "importPath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/Tests/VHangarToolingTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/Modules/VHangarTooling.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "VHangarToolingTests",
+      "moduleOutputPath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/Modules/VHangarToolingTests.swiftmodule",
+      "objects" : [
+        "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingTests.build/VHangarToolingTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j12",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "vhangartooling"
+      ],
+      "outputFileMapPath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingTests.build/VHangarToolingTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/Modules/VHangarToolingTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/Tests/VHangarToolingTests.swift"
+      ],
+      "tempsPath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "VHangarTooling" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "VHangarTooling",
+      "-package-name",
+      "vhangartooling",
+      "-c",
+      "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/Sources/Models.swift",
+      "-I",
+      "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarTooling.build/include/VHangarTooling-Swift.h",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "vhangartooling",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "VHangarToolingPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "VHangarToolingPackageTests",
+      "-package-name",
+      "vhangartooling",
+      "-c",
+      "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.build/include/VHangarToolingPackageTests-Swift.h",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "vhangartooling",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "VHangarToolingTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "VHangarToolingTests",
+      "-package-name",
+      "vhangartooling",
+      "-c",
+      "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/Tests/VHangarToolingTests.swift",
+      "-I",
+      "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j12",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "vhangartooling",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "VHangarTooling" : [
+
+    ],
+    "VHangarToolingPackageTests" : [
+      "VHangarToolingTests",
+      "VHangarTooling"
+    ],
+    "VHangarToolingTests" : [
+      "VHangarTooling"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarTooling.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/Sources/Models.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarTooling.build/sources"
+    },
+    "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.build/sources"
+    },
+    "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarTooling.build/Models.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingTests.build/VHangarToolingTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingPackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/Tests/VHangarToolingTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/VHangarToolingTests.build/sources"
+    },
+    "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/hectorstevenvillasano/Desktop/VirtualUAVHanger/Tooling/VHangarTooling/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

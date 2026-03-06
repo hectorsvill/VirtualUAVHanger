@@ -1,0 +1,6 @@
+# Cursor / Xcode / build artifacts
+.DS_Store
+DerivedData/
+*.xcuserstate
+*.xcworkspace/
+VirtualUAVHanger/Info.plist
