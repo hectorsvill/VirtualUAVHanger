@@ -129,11 +129,11 @@ struct AvatarBadge: View {
             if let initials = session?.initials, !initials.isEmpty {
                 Text(initials)
                     .font(.system(size: 12, weight: .semibold))
-                    .foregroundStyle(.accent)
+                    .foregroundStyle(Color.accentColor)
             } else {
                 Image(systemName: "person.fill")
                     .font(.system(size: 14))
-                    .foregroundStyle(.accent)
+                    .foregroundStyle(Color.accentColor)
             }
         }
     }
