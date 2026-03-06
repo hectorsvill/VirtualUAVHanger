@@ -10,6 +10,9 @@ import SwiftUI
 
 @main
 struct VirtualUAVHangerApp: App {
+
+    @StateObject private var authManager = AuthManager()
+
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Hangar.self,
@@ -29,8 +32,14 @@ struct VirtualUAVHangerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .modelContainer(sharedModelContainer)
+            if authManager.isAuthenticated {
+                ContentView()
+                    .modelContainer(sharedModelContainer)
+                    .environmentObject(authManager)
+            } else {
+                LoginView()
+                    .environmentObject(authManager)
+            }
         }
     }
 }
