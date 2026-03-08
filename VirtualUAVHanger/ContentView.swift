@@ -13,7 +13,9 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @State private var sidebarSelection: SidebarView.AppSection? = .fleet
-    @State private var showSignOutAlert = false
+    @State private var showSignOutAlert  = false
+    @State private var showUpgradeSheet  = false   // guest → real account
+    @State private var showDataPreserved = false   // post-upgrade toast
 
     private var useCompactLayout: Bool {
         #if os(iOS)
@@ -40,6 +42,12 @@ struct ContentView: View {
                         accountButton
                     }
                 }
+                // Guest prompt as a non-intrusive top inset
+                .safeAreaInset(edge: .top, spacing: 0) {
+                    if authManager.isGuest {
+                        GuestBanner { showUpgradeSheet = true }
+                    }
+                }
             } else {
                 sidebarContent
             }
@@ -48,12 +56,50 @@ struct ContentView: View {
             #endif
         }
         .withPartRepository(from: modelContext)
+        // Sign-out confirmation — extra context for guests
         .alert("Sign Out", isPresented: $showSignOutAlert) {
-            Button("Sign Out", role: .destructive) { authManager.signOut() }
+            if authManager.isGuest {
+                Button("Sign In First") {
+                    showSignOutAlert = false
+                    showUpgradeSheet = true
+                }
+                Button("Sign Out Anyway", role: .destructive) { authManager.signOut() }
+            } else {
+                Button("Sign Out", role: .destructive) { authManager.signOut() }
+            }
             Button("Cancel", role: .cancel) {}
         } message: {
-            Text("Are you sure you want to sign out?")
+            if authManager.isGuest {
+                Text("Your hangar data lives only on this device as a guest. Sign in first to keep it safe across reinstalls.")
+            } else {
+                Text("Are you sure you want to sign out?")
+            }
         }
+        // Upgrade sheet (guest → real account)
+        .sheet(isPresented: $showUpgradeSheet) {
+            LoginView(isUpgradeFlow: true)
+                .environmentObject(authManager)
+                .onDisappear {
+                    // Show "data preserved" toast if user successfully upgraded
+                    if authManager.isAuthenticated && !authManager.isGuest {
+                        showDataPreserved = true
+                        Task {
+                            try? await Task.sleep(for: .seconds(3))
+                            showDataPreserved = false
+                        }
+                    }
+                }
+        }
+        // "Data preserved" toast shown briefly after upgrading from guest
+        .overlay(alignment: .top) {
+            if showDataPreserved {
+                DataPreservedToast()
+                    .padding(.top, 56)
+                    .padding(.horizontal, 20)
+                    .transition(.move(edge: .top).combined(with: .opacity))
+            }
+        }
+        .animation(.spring(response: 0.4, dampingFraction: 0.85), value: showDataPreserved)
     }
 
     // MARK: - Account Button
@@ -71,6 +117,14 @@ struct ContentView: View {
                 }
             }
             Divider()
+            // Guests get a prominent "Sign In" option first
+            if authManager.isGuest {
+                Button {
+                    showUpgradeSheet = true
+                } label: {
+                    Label("Sign In to Save Data", systemImage: "person.badge.shield.checkmark.fill")
+                }
+            }
             Button(role: .destructive) {
                 showSignOutAlert = true
             } label: {
@@ -86,6 +140,7 @@ struct ContentView: View {
         case .apple:  "applelogo"
         case .google: "globe"
         case .email:  "envelope.fill"
+        case .guest:  "person.fill.questionmark"
         }
     }
 
@@ -98,6 +153,11 @@ struct ContentView: View {
                 .toolbar {
                     ToolbarItem(placement: .automatic) {
                         accountButton
+                    }
+                }
+                .safeAreaInset(edge: .top, spacing: 0) {
+                    if authManager.isGuest {
+                        GuestBanner { showUpgradeSheet = true }
                     }
                 }
         } content: {
@@ -116,17 +176,25 @@ struct ContentView: View {
 
 // MARK: - Avatar Badge
 
-/// Circular badge showing user initials or a person icon.
+/// Circular badge showing user initials, a guest icon, or a generic person icon.
 struct AvatarBadge: View {
     let session: UserSession?
+
+    private var isGuest: Bool { session?.provider == .guest }
 
     var body: some View {
         ZStack {
             Circle()
-                .fill(Color.accentColor.opacity(0.2))
+                .fill(isGuest
+                      ? Color.orange.opacity(0.2)
+                      : Color.accentColor.opacity(0.2))
                 .frame(width: 32, height: 32)
 
-            if let initials = session?.initials, !initials.isEmpty {
+            if isGuest {
+                Image(systemName: "person.fill.questionmark")
+                    .font(.system(size: 13))
+                    .foregroundStyle(Color.orange)
+            } else if let initials = session?.initials, !initials.isEmpty {
                 Text(initials)
                     .font(.system(size: 12, weight: .semibold))
                     .foregroundStyle(Color.accentColor)
@@ -136,6 +204,27 @@ struct AvatarBadge: View {
                     .foregroundStyle(Color.accentColor)
             }
         }
+    }
+}
+
+// MARK: - Data Preserved Toast
+
+/// Brief green confirmation shown after a guest successfully upgrades to a real account.
+private struct DataPreservedToast: View {
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "checkmark.circle.fill")
+                .foregroundStyle(.green)
+            Text("You're signed in. Your hangar data has been preserved.")
+                .font(.footnote)
+                .foregroundStyle(.primary)
+            Spacer()
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
+        .background(.regularMaterial)
+        .cornerRadius(12)
+        .shadow(color: .black.opacity(0.15), radius: 8, y: 4)
     }
 }
 

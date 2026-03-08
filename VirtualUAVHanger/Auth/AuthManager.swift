@@ -65,11 +65,27 @@ final class AuthManager: NSObject, ObservableObject {
         }
     }
 
+    /// `true` while the current session is a guest (no real account linked).
+    var isGuest: Bool { currentUser?.provider == .guest }
+
     func signOut() {
         currentUser = nil
         isAuthenticated = false
         UserDefaults.standard.removeObject(forKey: sessionKey)
         errorMessage = nil
+    }
+
+    // MARK: - Guest
+
+    /// Creates a temporary local session. Data is stored in SwiftData on-device and
+    /// persists until the app is deleted, but is not synced to any account.
+    func signInAsGuest() {
+        persist(UserSession(
+            id: "guest-\(UUID().uuidString)",
+            name: nil,
+            email: nil,
+            provider: .guest
+        ))
     }
 
     // MARK: - Sign in with Apple

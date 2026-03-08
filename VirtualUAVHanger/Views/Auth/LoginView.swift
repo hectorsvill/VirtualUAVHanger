@@ -2,14 +2,22 @@
 //  LoginView.swift
 //  VirtualUAVHanger
 //
-//  Full-screen login with Sign in with Apple, Google, and Email.
+//  Full-screen login with Sign in with Apple, Google, Email, and Guest.
+//
+//  isUpgradeFlow = true  →  shown as a sheet from ContentView when a guest
+//  wants to link a real account. Guest button is hidden and a data-preservation
+//  note is shown instead.
 //
 
 import AuthenticationServices
 import SwiftUI
 
 struct LoginView: View {
+    /// When `true` this view is presented modally over the main app (guest → real account).
+    var isUpgradeFlow: Bool = false
+
     @EnvironmentObject private var auth: AuthManager
+    @Environment(\.dismiss) private var dismiss
     @State private var showEmailSignIn = false
 
     var body: some View {
@@ -18,7 +26,7 @@ struct LoginView: View {
 
             VStack(spacing: 0) {
                 hero
-                    .padding(.top, 100)
+                    .padding(.top, isUpgradeFlow ? 60 : 100)
 
                 Spacer()
 
@@ -28,6 +36,12 @@ struct LoginView: View {
             }
         }
         .ignoresSafeArea()
+        // Dismiss sheet automatically once a real account is linked
+        .onChange(of: auth.currentUser?.provider) { _, newProvider in
+            if isUpgradeFlow, let p = newProvider, p.isRealAccount {
+                dismiss()
+            }
+        }
         // Error banner slides down from top
         .overlay(alignment: .top) {
             if let msg = auth.errorMessage {
@@ -38,13 +52,25 @@ struct LoginView: View {
             }
         }
         .animation(.spring(response: 0.4, dampingFraction: 0.85), value: auth.errorMessage)
-        // Loading overlay
         .overlay {
             if auth.isLoading { LoadingOverlay() }
         }
         .sheet(isPresented: $showEmailSignIn) {
             EmailSignInView()
                 .environmentObject(auth)
+        }
+        // Cancel button for upgrade-flow sheet
+        .overlay(alignment: .topTrailing) {
+            if isUpgradeFlow {
+                Button { dismiss() } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.system(size: 28))
+                        .symbolRenderingMode(.hierarchical)
+                        .foregroundStyle(.white.opacity(0.6))
+                        .padding(20)
+                }
+                .padding(.top, 8)
+            }
         }
     }
 
@@ -60,8 +86,6 @@ struct LoginView: View {
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
-
-            // Subtle radial glow behind hero icon
             RadialGradient(
                 colors: [Color.blue.opacity(0.18), .clear],
                 center: .top,
@@ -101,13 +125,33 @@ struct LoginView: View {
             }
 
             VStack(spacing: 8) {
-                Text("Virtual UAV Hangar")
+                Text(isUpgradeFlow ? "Save Your Hangar" : "Virtual UAV Hangar")
                     .font(.largeTitle.bold())
                     .foregroundStyle(.white)
 
-                Text("Your FPV fleet, organized.")
-                    .font(.subheadline)
-                    .foregroundStyle(.white.opacity(0.55))
+                Text(
+                    isUpgradeFlow
+                    ? "Sign in to protect your data across reinstalls."
+                    : "Your FPV fleet, organized."
+                )
+                .font(.subheadline)
+                .foregroundStyle(.white.opacity(0.55))
+                .multilineTextAlignment(.center)
+            }
+
+            // Upgrade-flow reassurance
+            if isUpgradeFlow {
+                HStack(spacing: 6) {
+                    Image(systemName: "checkmark.shield.fill")
+                        .foregroundStyle(.green)
+                    Text("Your existing hangar data will be preserved.")
+                        .font(.footnote)
+                        .foregroundStyle(.white.opacity(0.7))
+                }
+                .padding(.horizontal, 24)
+                .padding(.vertical, 10)
+                .background(Color.green.opacity(0.12))
+                .cornerRadius(10)
             }
         }
     }
@@ -161,11 +205,22 @@ struct LoginView: View {
                 )
             }
 
+            // ── Guest (hidden in upgrade flow) ──────────────────
+            if !isUpgradeFlow {
+                Button { auth.signInAsGuest() } label: {
+                    Text("Continue as Guest")
+                        .font(.subheadline)
+                        .foregroundStyle(.white.opacity(0.5))
+                        .underline()
+                }
+                .padding(.top, 4)
+            }
+
             Text("By continuing you agree to our Terms of Service.")
                 .font(.caption2)
                 .foregroundStyle(.white.opacity(0.3))
                 .multilineTextAlignment(.center)
-                .padding(.top, 4)
+                .padding(.top, isUpgradeFlow ? 0 : 4)
         }
     }
 
@@ -189,7 +244,6 @@ private struct GoogleGlyph: View {
                 .fill(Color.white)
                 .frame(width: 24, height: 24)
 
-            // Four-colour "G" split into quadrants via a clipping mask trick
             Text("G")
                 .font(.system(size: 16, weight: .bold))
                 .foregroundStyle(
@@ -219,14 +273,11 @@ private struct ErrorBanner: View {
         HStack(spacing: 10) {
             Image(systemName: "exclamationmark.triangle.fill")
                 .foregroundStyle(.orange)
-
             Text(message)
                 .font(.footnote)
                 .foregroundStyle(.white)
                 .lineLimit(3)
-
             Spacer()
-
             Button(action: onDismiss) {
                 Image(systemName: "xmark")
                     .font(.caption)
@@ -263,9 +314,14 @@ private struct LoadingOverlay: View {
     }
 }
 
-// MARK: - Preview
+// MARK: - Previews
 
-#Preview {
+#Preview("Normal") {
     LoginView()
+        .environmentObject(AuthManager())
+}
+
+#Preview("Upgrade Flow") {
+    LoginView(isUpgradeFlow: true)
         .environmentObject(AuthManager())
 }
