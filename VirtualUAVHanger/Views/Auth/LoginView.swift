@@ -170,6 +170,7 @@ struct LoginView: View {
             .signInWithAppleButtonStyle(.white)
             .frame(height: 52)
             .cornerRadius(14)
+            .accessibilityIdentifier("btn_apple_signin")
 
             // ── Google ──────────────────────────────────────────
             Button { auth.signInWithGoogle() } label: {
@@ -184,6 +185,8 @@ struct LoginView: View {
                 .foregroundStyle(Color(red: 0.22, green: 0.22, blue: 0.22))
                 .cornerRadius(14)
             }
+            .accessibilityIdentifier("btn_google_signin")
+            .accessibilityLabel("Continue with Google")
 
             orDivider
 
@@ -204,6 +207,8 @@ struct LoginView: View {
                         .stroke(Color.white.opacity(0.2), lineWidth: 1)
                 )
             }
+            .accessibilityIdentifier("btn_email_signin")
+            .accessibilityLabel("Continue with Email")
 
             // ── Guest (hidden in upgrade flow) ──────────────────
             if !isUpgradeFlow {
@@ -214,6 +219,7 @@ struct LoginView: View {
                         .underline()
                 }
                 .padding(.top, 4)
+                .accessibilityIdentifier("btn_guest_signin")
             }
 
             Text("By continuing you agree to our Terms of Service.")

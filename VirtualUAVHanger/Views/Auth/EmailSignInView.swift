@@ -100,6 +100,7 @@ struct EmailSignInView: View {
                     .onSubmit { focused = .password }
                     .foregroundStyle(.white)
                     .tint(.blue)
+                    .accessibilityIdentifier("field_email")
             } isFocused: { focused == .email }
 
             fieldRow(
@@ -109,8 +110,10 @@ struct EmailSignInView: View {
                 Group {
                     if showPassword {
                         TextField("6+ characters", text: $password)
+                            .accessibilityIdentifier("field_password")
                     } else {
                         SecureField("6+ characters", text: $password)
+                            .accessibilityIdentifier("field_password")
                     }
                 }
                 .textContentType(.password)
@@ -220,6 +223,7 @@ struct EmailSignInView: View {
         }
         .disabled(!canSubmit)
         .animation(.easeInOut(duration: 0.2), value: canSubmit)
+        .accessibilityIdentifier("btn_email_continue")
     }
 
     // MARK: - Hint
