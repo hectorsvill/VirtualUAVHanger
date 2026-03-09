@@ -199,6 +199,7 @@ struct AIChatView: View {
                         TextField("Ask about a part, drone, or paste a product link…", text: $viewModel.inputText, axis: .vertical)
                             .textFieldStyle(.roundedBorder)
                             .lineLimit(1...4)
+                            .accessibilityIdentifier("field_ai_chat_input")
 
                         Menu {
                             Button {
@@ -225,6 +226,7 @@ struct AIChatView: View {
                         }
                         .buttonStyle(.borderedProminent)
                         .disabled(viewModel.isSending || viewModel.inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                        .accessibilityIdentifier("btn_ai_send_menu")
                     }
 
                     aiActionsToolbar

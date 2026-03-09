@@ -20,6 +20,7 @@ struct DroneFormView: View {
             Form {
                 TextField("Drone name", text: $name)
                     .focused($nameFocused)
+                    .accessibilityIdentifier("field_drone_name")
                 EntityImagePickerView(
                     localImagePath: $localImagePath,
                     imageURL: $imageURL,
@@ -39,6 +40,8 @@ struct DroneFormView: View {
                         onSave(name.trimmingCharacters(in: .whitespacesAndNewlines), imageURL, localImagePath)
                     }
                     .disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                    .accessibilityIdentifier("btn_drone_form_add")
+                    .accessibilityLabel("Confirm Add Drone")
                 }
             }
             .onAppear { nameFocused = true }

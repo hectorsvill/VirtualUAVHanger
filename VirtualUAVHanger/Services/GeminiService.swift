@@ -60,6 +60,9 @@ actor GeminiService {
 
     /// General chat: returns the model's plain text reply.
     func chat(messages: [AIMessage], productURL: URL? = nil, context: String? = nil) async throws -> String {
+        if CommandLine.arguments.contains("--ai-mock") {
+            return "Mock AI: Got it! I can help you manage your drone fleet."
+        }
         var contents: [[String: Any]] = []
 
         // Convert our messages into Gemini "contents".
@@ -167,6 +170,9 @@ actor GeminiService {
 
     /// Asks Gemini to extract a structured DronePart description from free text + optional URL.
     func extractPart(from text: String, productURL: URL? = nil) async throws -> AIGeneratedPart {
+        if CommandLine.arguments.contains("--ai-mock") {
+            return AIGeneratedPart(name: "UITest Motor", category: "Motor", brand: "UITest Brand", serialNumber: "", manualURL: nil, imageURL: nil)
+        }
         let systemInstruction = """
         You are an assistant inside a drone inventory app (Virtual UAV Hangar).
         From the user's message and optional product URL, extract ONE drone component (part).
@@ -216,6 +222,9 @@ actor GeminiService {
 
     /// Asks Gemini to extract a structured Drone description from free text + optional URL.
     func extractDrone(from text: String, productURL: URL? = nil) async throws -> AIGeneratedDrone {
+        if CommandLine.arguments.contains("--ai-mock") {
+            return AIGeneratedDrone(name: "UITest Drone", imageURL: nil)
+        }
         let systemInstruction = """
         You are an assistant inside a drone inventory app (Virtual UAV Hangar).
         From the user's message and optional product URL, extract ONE drone.
