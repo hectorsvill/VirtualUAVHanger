@@ -44,6 +44,7 @@ struct PartFormView: View {
                 Section("Part") {
                     TextField("Name", text: $name)
                         .focused($focusedField, equals: .name)
+                        .accessibilityIdentifier("field_part_name")
                     Picker("Category", selection: $category) {
                         ForEach(PartCategory.allCases) { c in
                             Text(c.rawValue).tag(c)
@@ -51,6 +52,7 @@ struct PartFormView: View {
                     }
                     TextField("Brand", text: $brand)
                         .focused($focusedField, equals: .brand)
+                        .accessibilityIdentifier("field_part_brand")
                     TextField("Serial number", text: $serialNumber)
                         .focused($focusedField, equals: .serial)
                 }
@@ -99,6 +101,8 @@ struct PartFormView: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button(isEdit ? "Save" : "Add") { save() }
                         .disabled(!isValid)
+                        .accessibilityIdentifier("btn_part_form_save")
+                        .accessibilityLabel(isEdit ? "Confirm Save Part" : "Confirm Add Part")
                 }
             }
             .onAppear { bindPart() }

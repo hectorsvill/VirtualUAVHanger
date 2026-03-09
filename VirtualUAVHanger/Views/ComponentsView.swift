@@ -65,6 +65,7 @@ struct ComponentsView: View {
                     } label: {
                         Image(systemName: "plus.circle.fill")
                     }
+                    .accessibilityIdentifier("btn_components_plus_menu")
                 }
                 ToolbarItem(placement: .automatic) {
                     Menu {

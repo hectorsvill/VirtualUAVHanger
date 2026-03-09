@@ -43,6 +43,7 @@ struct FleetView: View {
                     Button { showAddDrone = true } label: {
                         Image(systemName: "plus.circle.fill")
                     }
+                    .accessibilityIdentifier("btn_fleet_add_drone")
                 }
             }
             .navigationDestination(for: Drone.self) { drone in

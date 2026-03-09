@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Sign in with Apple -->
+	<key>com.apple.developer.applesignin</key>
+	<array>
+		<string>Default</string>
+	</array>
+	<!-- App Sandbox (mirrors ENABLE_APP_SANDBOX = YES) -->
+	<key>com.apple.security.app-sandbox</key>
+	<true/>
+	<!-- Network access – required for Gemini API + Google OAuth -->
+	<key>com.apple.security.network.client</key>
+	<true/>
+	<!-- User-selected files read-only (mirrors ENABLE_USER_SELECTED_FILES = readonly) -->
+	<key>com.apple.security.files.user-selected.read-only</key>
+	<true/>
+</dict>
+</plist>
